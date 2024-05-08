@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Event Manager Examples</title>
+    </head>
+    <body>
+
+        <h1>Task 1: Paragraph Color Change on Events</h1>
+        <p id="eventParagraph">Click Me!</p>
+
+        <script>
+            var Paragraph = document.getElementById("eventParagraph");
+
+            Paragraph.addEventListener("click", function() {
+                this.style.backgroundColor = "yellow";
+            });
+
+            Paragraph.addEventListener("dblclick", function() {
+                this.style.backgroundColor = "blue";
+            });
+
+            Paragraph.addEventListener("mouseover", function() {
+                this.style.backgroundColor = "red";
+            });
+
+            Paragraph.addEventListener("mouseout", function() {
+                this.style.backgroundColor = "green";
+            });
+        </script>
+
+        <h1>Task 2: Text Field Events</h1>
+        <input type="text" id="textField" placeholder="Enter text here">
+
+        <script>
+            var textField = document.getElementById("textField");
+
+            textField.addEventListener("change", function() {
+                this.style.color = "blue";
+                console.log("Text field content changed:", this.value);
+            });
+
+            textField.addEventListener("focus", function(){
+                this.style.color = "black";
+                console.log("Text field gained focus");
+            });
+
+            textField.addEventListener("blur", function() {
+                this.style.color = "";
+                console.log("Text field lost focus");
+            });
+        </script>
+    </body>
+</html>
